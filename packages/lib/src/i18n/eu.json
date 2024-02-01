@@ -1,0 +1,70 @@
+{
+  "cabecera": {
+    "abandonarSesión": "Egoitza elektronikoko saioa utziko duzu",
+    "acceso": "Sarbidea",
+    "aceptar": "Onartu",
+    "areaPersonal": "Eremu pertsonala",
+    "areaProfesional": "Eremu profesionala",
+    "bizkaiaEus": "Bizkaia.eus",
+    "cancelar": "Ezeztatu",
+    "cerrarSesion": "Saioa itxi",
+    "ciudadania": "HIRITARGOA",
+    "contacto": "Harremana",
+    "enNombreDe": "{{empresa}}-(r)en izenean",
+    "estaSeguro": "Ziur al zaude irten nahi duzula?",
+    "idiomaPropio": "Euskera",
+    "idiomaActual": "EU",
+    "idiomaOtro": "ES",
+    "menuCiudadania": "EGOITZA ELEKTRONIKOA HIRITARGOA",
+    "menuProfesional": "ZERGA-ARLOKO EGOITZA ELEKTRONIKO PROFESIONALA",
+    "misDatos": "Nire datuak",
+    "misDatosProfesionales": "Nire datu profesionalak",
+    "profesionalTributario": "ZERGETAKO PROFESIONALA AZKEN",
+    "seguroSalir": "Ziur al zaude irten nahi duzula?",
+    "textoPortal": "Joan atari honetara",
+    "textoLogo": "Bizkaiko Foru Aldundiaren Egoitza elektronikoa. Joan atariko orrialde nagusira",
+    "ultimaConexion": "Azken konexioa",
+    "vaAAbandonar": "Egoitza elektronikoko saioa utziko duzu",
+    "idioma": {
+      "es": "Español",
+      "eu": "Euskara"
+    },
+    "urls": {
+      "area-personal": "https://{{dominio}}/eu/eremu-pertsonala",
+      "area-profesional": "https://{{dominio}}/eu/eremu-profesionala",
+      "error": "https://{{dominio}}/eu/errorea?pr=1",
+      "mis-datos": "https://{{dominio}}/eu/nire-profila",
+      "mis-datos-profesionales": "https://{{dominio}}/eu/nireDatuProfesionalak",
+      "contacto": "https://{{dominio}}/eu/harremana",
+      "mis-avisos": "http://{dominio}/EWAV001M/obtenerAvisosUsuario",
+      "inicio-personal": "https://{{dominio}}/eu/hasiera",
+      "inicio-profesional": "https://{{dominio}}/eu/profesionala"
+    }
+  },
+  "pie": {
+    "chat": {
+      "title": "(Leiho berria ireki)",
+      "url": "https://www.bizkaia.eus/home2/join.asp?Idioma=EU",
+      "texto": "Urrutiko sarbidea"
+    },
+    "diputacion-foral": "Bizkaiko Foru Aldundia - Diputación Foral de Bizkaia",
+    "opcion": {
+      "mapa-web": {
+        "url": "https://{{dominio}}/eu/mapa-web",
+        "texto": "Gunearen mapa"
+      },
+      "aviso-legal": {
+        "url": "https://{{dominio}}/eu/lege-oharrak",
+        "texto": "Lege oharrak"
+      },
+      "accesibilidad": {
+        "url": "https://{{dominio}}/eu/erabilerraztasuna",
+        "texto": "Erabilerraztasuna"
+      },
+      "cookie": {
+        "url": "https://{{dominio}}/eu/cookieak",
+        "texto": "Cookieak"
+      }
+    }
+  }
+}

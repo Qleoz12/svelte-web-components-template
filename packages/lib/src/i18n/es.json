@@ -1,0 +1,28 @@
+{
+  "pie": {
+    "chat": {
+      "title": "(Abre una nueva ventana)",
+      "url": "https://www.bizkaia.eus/home2/join.asp?Idioma=CA",
+      "texto": "Acceso remoto"
+    },
+    "diputacion-foral": "Diputación Foral de Bizkaia - Diputación Foral de Bizkaia",
+    "opcion": {
+      "mapa-web": {
+        "url": "https://{{dominio}}/es/mapa-web",
+        "texto": "Mapa web"
+      },
+      "aviso-legal": {
+        "url": "https://{{dominio}}/es/lege-oharrak",
+        "texto": "Avisos legales"
+      },
+      "accesibilidad": {
+        "url": "https://{{dominio}}/es/accesibilidad",
+        "texto": "Accesibilidad"
+      },
+      "cookie": {
+        "url": "https://{{dominio}}/es/cookies",
+        "texto": "Cookies"
+      }
+    }
+  }
+}
