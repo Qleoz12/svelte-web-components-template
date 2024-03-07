@@ -1,5 +1,22 @@
 <script lang="ts">
-  import '../../lib';
+  import "../../lib";
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+  
+  function setLocale(value) {
+    localStorage.setItem("locale", value);
+    sessionStorage.setItem("locale", value);
+    localStorage.setItem("lng", value);
+    sessionStorage.setItem("lng", value);
+
+    dispatch('localeChanged', { value });
+  }
+
+  function clear(){
+    localStorage.clear()
+    sessionStorage.clear()
+  }
 </script>
 
 <main>
@@ -8,13 +25,18 @@
 
   <p class="container">
     <!-- <my-component></my-component> -->
-    <my-footer>
-      <section slot="enlaces">
-        <p>chopitos</p>
-        <p>pescado</p>
-        <p>fruta del día</p>
-        </section>
-    </my-footer>
+    <button on:click={() => setLocale("es")}>Set Spanish Locale</button>
+    <button on:click={() => setLocale("eu")}>Set EU Locale</button>
+    <button on:click={() => localStorage.setItem("locale", "message")}>
+      Set 'message'
+    </button>
+    <button on:click={() => clear()}>
+      clear
+    </button>
+    <my-footer menus={["Home", "About", "Contact"]}></my-footer>
+    <!-- <section>
+    <my-footer menus="{[ 'Home', 'About', 'Contact' ]}" language="es"></my-footer>
+  </section> -->
   </p>
 </main>
 
