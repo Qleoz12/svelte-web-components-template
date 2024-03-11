@@ -1,5 +1,4 @@
 <svelte:options tag="my-footer" />
-
 <!-- <svelte:window on:storage={listener} /> -->
 
 <script lang="ts">
@@ -91,9 +90,8 @@
 
 <footer>
   <!-- <Enlace {menus} /> -->
-  <!-- <slot name="enlaces">
-    <p>no menu</p>
-  </slot> -->
+  <slot name="enlaces">
+  </slot> 
   <div id="sede-chatweb">
     <a
       href={$i18n.t("pie.chat.url")}
