@@ -35,7 +35,7 @@
   </section>
 
     <!-- demo how coul use the webcomponent  -->
-    <!-- <my-footer></my-footer> -->
+    <my-footer></my-footer>
     <!-- <DemoSlot></DemoSlot> -->
     <!-- <Demoalone></Demoalone> -->
   </div>

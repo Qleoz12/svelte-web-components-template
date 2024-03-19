@@ -6,6 +6,8 @@
   import { onMount, setContext } from "svelte";
   import { get } from "svelte/store";
   import { i18n, changeLanguage } from "./i18n/i18n";
+
+  import { ROL, fetchMenu } from "./services/menu";
   // import Enlace from "./Enlace.svelte";
 
   // import { Enlace } from '../moleculas/Enlace.svelte';
@@ -27,73 +29,75 @@
     i18nbar = $i18n;
     console.log(language);
     currentLanguage.set(language);
-    changeLanguage(language);
+    // changeLanguage(language);
     //this works
     console.log(get(i18n).language);
+    console.log(menus);
   }
+  addMenu();
 
-  window.addEventListener("storage", (e) => {
-    // When local storage changes, dump the list to
-    // the console.
-    console.log(e);
-    console.log(JSON.parse(window.localStorage.getItem("locale")));
-  });
+  // window.addEventListener("storage", (e) => {
+  //   // When local storage changes, dump the list to
+  //   // the console.
+  //   console.log(e);
+  //   console.log(JSON.parse(window.localStorage.getItem("locale")));
+  // });
 
-  window.onstorage = (e) => {
-    // When local storage changes, dump the list to
-    // the console.
-    console.log(e);
-    console.log(JSON.parse(window.localStorage.getItem("locale")));
-  };
+  // window.onstorage = (e) => {
+  //   // When local storage changes, dump the list to
+  //   // the console.
+  //   console.log(e);
+  //   console.log(JSON.parse(window.localStorage.getItem("locale")));
+  // };
 
-  onMount(() => {
-    window.addEventListener("storage", (e) => {
-      // When local storage changes, dump the list to
-      // the console.
-      console.log(e);
-      console.log(JSON.parse(window.localStorage.getItem("locale")));
-    });
+  // onMount(() => {
+  //   window.addEventListener("storage", (e) => {
+  //     // When local storage changes, dump the list to
+  //     // the console.
+  //     console.log(e);
+  //     console.log(JSON.parse(window.localStorage.getItem("locale")));
+  //   });
 
-    window.onstorage = (e) => {
-      // When local storage changes, dump the list to
-      // the console.
-      console.log(e);
-      console.log(JSON.parse(window.localStorage.getItem("locale")));
-    };
+  //   window.onstorage = (e) => {
+  //     // When local storage changes, dump the list to
+  //     // the console.
+  //     console.log(e);
+  //     console.log(JSON.parse(window.localStorage.getItem("locale")));
+  //   };
 
-    // Custom store that syncs with local storage
-    function localStorageStore(key, initialValue) {
-      const storedValue = localStorage.getItem(key);
-      let initial;
-      try {
-        initial = storedValue ? JSON.parse(storedValue) : initialValue;
-      } catch (error) {
-        console.error("Error parsing storedValue:", error);
-        initial = initialValue; // Fallback to initialValue if parsing fails
-      }
-      const store = writable(initial);
+  //   // Custom store that syncs with local storage
+  //   function localStorageStore(key, initialValue) {
+  //     const storedValue = localStorage.getItem(key);
+  //     let initial;
+  //     try {
+  //       initial = storedValue ? JSON.parse(storedValue) : initialValue;
+  //     } catch (error) {
+  //       console.error("Error parsing storedValue:", error);
+  //       initial = initialValue; // Fallback to initialValue if parsing fails
+  //     }
+  //     const store = writable(initial);
 
-      store.subscribe((value) => {
-        console.log("cambios");
-        localStorage.setItem(key, JSON.stringify(value));
-      });
+  //     store.subscribe((value) => {
+  //       console.log("cambios");
+  //       localStorage.setItem(key, JSON.stringify(value));
+  //     });
 
-      return store;
-    }
+  //     return store;
+  //   }
 
-    // Create a store for the "locale" key
-    const localeStore = localStorageStore("locale", {});
+  //   // Create a store for the "locale" key
+  //   const localeStore = localStorageStore("locale", {});
 
-    // Function to log changes
-    function logChange(store) {
-      store.subscribe((value) => {
-        console.log(value);
-      });
-    }
+  //   // Function to log changes
+  //   function logChange(store) {
+  //     store.subscribe((value) => {
+  //       console.log(value);
+  //     });
+  //   }
 
-    // Log changes to the locale store
-    logChange(localeStore);
-  });
+  //   // Log changes to the locale store
+  //   logChange(localeStore);
+  // });
 
   // onMount(async () => {
   //   try {
@@ -110,6 +114,7 @@
   //     console.error("Failed to fetch CSS:", error);
   //   }
   // });
+
   // Define the action
   function addStyle(node) {
     onMount(async () => {
@@ -134,12 +139,49 @@
       },
     };
   }
+
+  async function addMenu() {
+    onMount(async () => {
+      console.log("adenu", get(i18n).language);
+      try {
+        menus = await fetchMenu(ROL.CIUDADANO, get(i18n).language, {}); // Adjust parameters as necessary
+      } catch (error) {
+        console.error("Failed to fetch menus:", error);
+      }
+    });
+  }
 </script>
 
 <!-- {@debug} -->
 <div class="sedeBodyGeneral">
   <footer use:addStyle>
     <!-- <Enlace {menus} /> -->
+    <ul class="sedeMapaWeb">
+      {#each menus as menu}
+        <li>
+          {#if menu.url}
+            <a href={menu.url}>{menu.label}</a>
+          {:else}
+            <span>{menu.label}</span>
+          {/if}
+          {#if menu.menuItem && menu.menuItem.length > 0}
+            <ul>
+              {#each menu.menuItem as subItem, subIndex (subIndex)}
+                <li>
+                  <a
+                    href={subItem.url}
+                    target={subItem.abreNuevaPestana ? "_blank" : "_self"}
+                  >
+                    {subItem.label}
+                  </a>
+                </li>
+              {/each}
+            </ul>
+          {/if}
+        </li>
+      {/each}
+    </ul>
+    <!-- end menus -->
     <slot name="enlaces" />
     <div id="sede-chatweb">
       <a
