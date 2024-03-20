@@ -1,4 +1,46 @@
 {
+  "cabecera": {
+    "abandonarSesión": "Vas a abandonar la sesión en Sede Electrónica",
+    "acceso": "Acceso",
+    "aceptar": "Aceptar",
+    "areaPersonal": "Área personal",
+    "areaProfesional": "Área profesional",
+    "bizkaiaEus": "Bizkaia.eus",
+    "cancelar": "Cancelar",
+    "cerrarSesion": "Cerrar sesión",
+    "ciudadania": "CIUDADANÍA",
+    "contacto": "Contacto",
+    "enNombreDe": "En nombre de {{empresa}}",
+    "estaSeguro": "¿Estás seguro de que desea salir?",
+    "idiomaActual": "ES",
+    "idiomaOtro": "EU",
+    "idiomaPropio": "Castellano",
+    "menuCiudadania": "SEDE ELECTRÓNICA CIUDADANÍA",
+    "menuProfesional": "SEDE ELECTRÓNICA PROFESIONAL TRIBUTARIA",
+    "misDatos": "Mis datos",
+    "misDatosProfesionales": "Mis datos profesionales",
+    "profesionalTributario": "PROFESIONAL TRIBUTARIO",
+    "textoLogo": "Logotipo de la sede electrónica de Bizkaia",
+    "textoPortal": "Ir al portal",
+    "seguroSalir": "¿Estás seguro que deseas salir? ",
+    "ultimaConexion": "Última conexión ",
+    "vaAAbandonar": "Vas a abandonar la sesión de la Sede Electrónica",
+    "urls": {
+      "area-personal": "https://{{dominio}}/es/area-personal",
+      "area-profesional": "https://{{dominio}}/es/area-profesional",
+      "error": "https://{{dominio}}/es/error?pr=1",
+      "mis-datos": "https://{{dominio}}/es/mi-perfil",
+      "mis-datos-profesionales": "https://{{dominio}}/es/misDatosProfesionales",
+      "contacto": "https://{{dominio}}/es/contacto",
+      "mis-avisos": "http://{dominio}/EWAV001M/obtenerAvisosUsuario",
+      "inicio-personal": "https://{{dominio}}/es/inicio",
+      "inicio-profesional": "https://{{dominio}}/es/profesional"
+    },
+    "idioma": {
+      "es": "Español",
+      "eu": "Euskara"
+    }
+  },
   "pie": {
     "chat": {
       "title": "(Abre una nueva ventana)",

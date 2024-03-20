@@ -35,7 +35,11 @@
   </section>
 
     <!-- demo how coul use the webcomponent  -->
-    <my-footer></my-footer>
+    
+    <my-header></my-header>
+    <my-menu></my-menu>
+    <!-- <my-footer></my-footer> -->
+    <!-- <my-component></my-component> -->
     <!-- <DemoSlot></DemoSlot> -->
     <!-- <Demoalone></Demoalone> -->
   </div>

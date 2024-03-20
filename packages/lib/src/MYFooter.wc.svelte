@@ -142,7 +142,7 @@
 
   async function addMenu() {
     onMount(async () => {
-      console.log("adenu", get(i18n).language);
+      console.log("add menu", get(i18n).language);
       try {
         menus = await fetchMenu(ROL.CIUDADANO, get(i18n).language, {}); // Adjust parameters as necessary
       } catch (error) {
