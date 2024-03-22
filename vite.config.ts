@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { transform } from 'esbuild';
 import pkg from './package.json';
+import sveltePreprocess from "svelte-preprocess";
 
 const bundleComponents = process.env.BUNDLE_COMPONENTS ?? true;
 
@@ -38,6 +39,9 @@ export default defineConfig({
     }),
     svelte({
       include: /\.wc\.svelte$/ as any,
+    }),
+    svelte({
+      preprocess: sveltePreprocess()
     }),
     minifyEs()
   ]

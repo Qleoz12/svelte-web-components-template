@@ -36,9 +36,9 @@
 
     <!-- demo how coul use the webcomponent  -->
     
-    <my-header></my-header>
-    <my-menu></my-menu>
-    <!-- <my-footer></my-footer> -->
+    <!-- <my-header></my-header> -->
+    <my-menu id="my-menu"></my-menu>
+    <my-footer></my-footer>
     <!-- <my-component></my-component> -->
     <!-- <DemoSlot></DemoSlot> -->
     <!-- <Demoalone></Demoalone> -->
@@ -48,7 +48,7 @@
 <style>
   main {
     text-align: center;
-    padding: 1em;
+    /*padding: 1em;*/
     max-width: 240px;
     margin: 0 auto;
   }
@@ -65,9 +65,9 @@
       max-width: none;
     }
 
-    .container {
-      display: inline-block;
+    /* .container { */
+      /* display: inline-block; */
       /* max-width: 320px; */
-    }
+    /* } */
   }
 </style>
